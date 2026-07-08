@@ -4,7 +4,25 @@ C题: 智能竞赛文档客服机器人（Document QA Bot）
 
 基于 LlamaIndex 的 **Advanced RAG** 系统：Hybrid 检索 + Rerank + LLM 路由 + 引用溯源 + 知识库运维 + RAGAS 评估。详细演进见 [HELP.md](HELP.md)。
 
-## 克隆后首次配置
+## 运行效果
+
+### Gradio 首页 · 使用教程
+
+<img src="docs/screenshots/1.Gradio首页-使用教程.png" alt="Gradio 首页使用教程" width="800">
+
+### 文档上传建库与问答
+
+<img src="docs/screenshots/2.文档上传与建库，以及问答流程.png" alt="文档上传建库与问答流程" width="800">
+
+### 存储管理
+
+<img src="docs/screenshots/3.存储管理.png" alt="存储管理" width="800">
+
+### 高级工具与调试
+
+<img src="docs/screenshots/4.高级工具与调试.png" alt="高级工具与调试" width="800">
+
+---
 
 本仓库**不包含**大体积模型、向量索引和 API 密钥。克隆后按顺序执行：
 
