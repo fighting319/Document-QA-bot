@@ -203,6 +203,9 @@ docker compose --profile qdrant up -d
 # .env: VECTOR_BACKEND=qdrant
 python scripts/migrate_to_qdrant.py   # 从本地索引迁移到Qdrant
 ```
+#### Qdrant 向量外置实现效果
+
+<img src="docs/screenshots/5.Qdrant外置向量.png" alt="文档上传建库与问答流程" width="800">
 
 详见 [HELP.md](HELP.md)「Qdrant 向量外置」章节。
 
