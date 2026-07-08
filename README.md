@@ -94,7 +94,7 @@ python main.py
 
 入口：`main.py`（Gradio UI）或 `api_server.py`（FastAPI）。
 
-## FastAPI（Week 4 · 阶段 A）
+## FastAPI
 
 ```bash
 .\venv\Scripts\activate
@@ -124,7 +124,7 @@ curl -X POST http://127.0.0.1:8000/api/v1/chat \
 
 Gradio 与 API **共用** `app/services/qa_service.py`，RAG 行为一致。
 
-## Docker（Week 4 · 阶段 B）
+## Docker
 
 ```bash
 # 准备 .env（含 DEEPSEEK_API_KEY）
@@ -144,7 +144,7 @@ docker compose --profile ui up -d --build
 
 挂载目录：`models/`、`storage/`、`uploads/`。详见 [HELP.md](HELP.md)。
 
-## RAGAS 评估（Week 3）
+## RAGAS 评估
 
 对 `eval/questions.json` 中 5 题，基于 `week1_results.json` / `week2_results.json` 的历史回答跑 RAGAS：
 
@@ -201,18 +201,9 @@ python eval/run_ragas.py
 ```bash
 docker compose --profile qdrant up -d
 # .env: VECTOR_BACKEND=qdrant
-python scripts/migrate_to_qdrant.py   # 从本地索引迁移
+python scripts/migrate_to_qdrant.py   # 从本地索引迁移到Qdrant
 ```
 
 详见 [HELP.md](HELP.md)「Qdrant 向量外置」章节。
 
 ---
-
-## 推送到 GitHub 前检查
-
-```bash
-git status
-# 确认未包含：.env、models/、storage/、uploads/、venv/
-```
-
-若 `.env` 曾被误提交，执行 `git rm --cached .env` 后重新 commit。
