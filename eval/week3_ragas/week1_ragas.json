@@ -1,0 +1,47 @@
+{
+  "label": "week1-hybrid-rerank-semantic-chunk",
+  "evaluated_at": "2026-07-06 17:16:10",
+  "sample_count": 5,
+  "summary": {
+    "faithfulness": 0.732,
+    "answer_relevancy": 0.4917,
+    "context_precision": 0.4667
+  },
+  "per_question": [
+    {
+      "id": "Q001",
+      "question": "3D编程模型创新设计专项赛在哪里举办？",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 1.0
+    },
+    {
+      "id": "Q002",
+      "question": "一共有几个比赛？",
+      "faithfulness": 0.7143,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "Q003",
+      "question": "未来校园智能应用专项赛的参赛流程是怎样的？",
+      "faithfulness": 0.6957,
+      "answer_relevancy": 0.9971,
+      "context_precision": 0.5
+    },
+    {
+      "id": "Q004",
+      "question": "3D编程模型创新设计专项赛报名时间是什么时候？",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9924,
+      "context_precision": 0.8333
+    },
+    {
+      "id": "Q005",
+      "question": "3D编程模型创新设计专项赛和未来校园智能应用专项赛的参赛资格是什么？",
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.4689,
+      "context_precision": 0.0
+    }
+  ]
+}

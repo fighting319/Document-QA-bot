@@ -1,0 +1,27 @@
+huggingface-hub==0.23.5
+llama-index==0.11.17
+llama-index-retrievers-bm25==0.4.0
+llama-index-llms-huggingface==0.3.5
+llama-index-embeddings-huggingface==0.3.1
+llama-index-embeddings-huggingface-api==0.2.1
+llama-index-llms-huggingface-api==0.2.0
+pydantic==2.10.6
+python-dotenv==1.0.1
+pdfplumber==0.11.5
+sentence-transformers==2.7.0
+modelscope==1.37.1
+gradio==4.44.1
+# 可选：Office 解析 + PDF 质检失败时的 LlamaParse fallback（需配置 LLAMA_API_KEY）
+llama-parse==0.6.4.post1
+# Week 4 FastAPI
+fastapi==0.115.11
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+# Week 3 RAGAS 评估（可选，运行 eval/run_ragas.py 时需要）
+ragas>=0.2.0,<0.5
+datasets>=2.14.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+# 可选：向量外置 Qdrant（VECTOR_BACKEND=qdrant 时需要，版本需匹配 llama-index 0.11）
+llama-index-vector-stores-qdrant==0.3.3
+qdrant-client>=1.7.0,<1.12.0

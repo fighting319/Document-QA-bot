@@ -1,0 +1,64 @@
+# 一条命令启动：docker compose up -d --build
+# 同时启动 Gradio UI：docker compose --profile ui up -d --build
+# 可选 Qdrant 向量库：docker compose --profile qdrant up -d
+
+services:
+  qdrant:
+    profiles: ["qdrant"]
+    image: qdrant/qdrant:v1.12.5
+    container_name: docbot-qdrant
+    restart: unless-stopped
+    ports:
+      - "${QDRANT_PORT:-6333}:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  api:
+    build:
+      context: .
+      args:
+        PIP_INDEX_URL: ${PIP_INDEX_URL:-}
+    container_name: docbot-api
+    restart: unless-stopped
+    ports:
+      - "${API_PORT:-8000}:8000"
+    environment:
+      APP_MODE: api
+      API_HOST: 0.0.0.0
+      API_PORT: "8000"
+    env_file:
+      - .env
+    volumes:
+      - ./models:/app/models
+      - ./storage:/app/storage
+      - ./uploads:/app/uploads
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
+
+  gradio:
+    profiles: ["ui"]
+    build:
+      context: .
+      args:
+        PIP_INDEX_URL: ${PIP_INDEX_URL:-}
+    container_name: docbot-gradio
+    restart: unless-stopped
+    ports:
+      - "${GRADIO_PORT:-7860}:7860"
+    environment:
+      APP_MODE: gradio
+      GRADIO_HOST: 0.0.0.0
+      GRADIO_PORT: "7860"
+    env_file:
+      - .env
+    volumes:
+      - ./models:/app/models
+      - ./storage:/app/storage
+      - ./uploads:/app/uploads
+
+volumes:
+  qdrant_data:

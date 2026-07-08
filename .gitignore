@@ -1,0 +1,40 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+*.log
+
+# IDE / OS
+.idea/
+.cursor/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Secrets（切勿提交）
+.env
+
+# 大体积模型（克隆后本地下载，见 README）
+models/*
+!models/.gitkeep
+
+# 运行时索引与上传文件
+storage/*
+!storage/.gitkeep
+uploads/*
+!uploads/.gitkeep
+
+# 竞赛原始 PDF（若需入库可删除本行）
+data/
+
+# ModelScope / HuggingFace 缓存
+models/.modelscope/
+models/.locks/
+models/models--*/
+
+# 根目录 HuggingFace LFS 模板（本项目模型不入库）
+gitattributes
